@@ -17,6 +17,7 @@
 		</li>
 		{{/each}}
 	</ul>
+	<div class="expander icon-more"></div>
 </script>
 <script id="mail-messages-template" type="text/x-handlebars-template">
 	<div id="mail-message-summary-{{id}}" class="mail_message_summary {{#if flags.unseen}}unseen{{/if}}" data-message-id="{{id}}">

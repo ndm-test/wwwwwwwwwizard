@@ -679,4 +679,9 @@ $(document).ready(function () {
 		var messageId = $(this).parent().parent().parent().parent().parent().data('messageId');
 		Mail.UI.saveAttachment(messageId);
 	});
+
+	$(document).on('click', '.expander', function(event) {
+		event.stopPropagation();
+		$(this).prev().toggleClass('expanded');
+	});
 });

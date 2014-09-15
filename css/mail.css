@@ -99,6 +99,62 @@ button.control {
 	margin-top: 2em;
 }
 
+/* expandable folder list */
+.mail_folders {
+	position: relative;
+	overflow: hidden;
+	max-height: 176px;
+	-moz-transition: max-height 1s;
+	-o-transition: max-height 1s;
+	-webkit-transition: max-height 1s;
+	-ms-transition: max-height 1s;
+	transition: max-height 1s;
+}
+/* gradient on bottom of collapsed folder list as hint that it's expandable */
+.mail_folders:after {
+	display: block;
+	height: 44px;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	content: ' ';
+	background: -moz-linear-gradient(bottom, #f5f5f5 0%, transparent 100%);
+	background: -webkit-linear-gradient(bottom, #f5f5f5 0%,transparent 100%);
+	background: -o-linear-gradient(bottom, #f5f5f5 0%,transparent 100%);
+	background: -ms-linear-gradient(bottom, #f5f5f5 0%,transparent 100%);
+	background: linear-gradient(bottom, #f5f5f5 0%,transparent 100%);
+}
+.mail_folders.expanded {
+	max-height: 100%;
+	-moz-transition: max-height 1s;
+	-o-transition: max-height 1s;
+	-webkit-transition: max-height 1s;
+	-ms-transition: max-height 1s;
+	transition: max-height 1s;
+}
+.mail_folders.expanded:after {
+	height: 0;
+	background: none;
+}
+.mail_folders + .expander {
+	padding: 22px;
+	margin-top: -44px;
+	cursor: pointer;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+	filter: alpha(opacity=30);
+	opacity: .3;
+}
+.mail_folders + .expander:hover,
+.mail_folders + .expander:focus {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=50);
+	opacity: .5;
+}
+.mail_folders.expanded + .expander {
+	margin-top: 0;
+}
+
 .mail_account_email {
 	opacity: .5;
 	padding: 20px 0 10px 12px;
