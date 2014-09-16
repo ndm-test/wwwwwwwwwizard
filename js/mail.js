@@ -684,4 +684,12 @@ $(document).ready(function () {
 		event.stopPropagation();
 		$(this).prev().toggleClass('expanded');
 	});
+
+	if($('.mail_folders').height() <= 176) {
+		$('.expander').prop('display', 'none');
+	}
+	// only show switcher when more than 5 folders exist
+	// only collapse for multiple accounts
+
+	// subfolder collapsing!
 });
